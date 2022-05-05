@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<title>Calcular a formula</title>
+	<link rel="stylesheet" href="style.css" />	
+	<script src="formulas.js"></script>
+</head>
+<body>
+    <div id="main">
+        <h1> Calcular as formulas</h1>
+        Fisica
+        <table>
+            <tr>
+                <td> Velocidade:</td> <td><input type="text" id="velocidade" /></td>
+            </tr>
+            <tr>
+                <td> <input type="button" value="Tempo" onclick="mostrar()" /> </td> <p id="result">Resultado: </p> 
+                <td> <input type="button" value="Altura" onclick="mostrar2()" /> </td> <p id="result2">Altura é: </p>
+            </tr>
+        </table>
+        <div id="respostas"></div>
+    </div>
+</body>
