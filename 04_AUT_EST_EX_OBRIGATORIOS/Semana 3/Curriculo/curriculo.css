@@ -1,37 +1,102 @@
-.creme{
-    background-color:rgb(248, 204, 150);
+html {
+    height: 100%;
+    font-family: 'Montserrat';
+
+    display: grid;
+    align-items: center;
+    justify-items: center;
+
+    --bg: #FCFCFC;
+    --bg-panel: #EBEBEB;
+    --color-headings: #0077FF;
+    --color-text: #333333;
 }
 
-.preto{
-    color:#222725
+body {
+    background-color: var(--bg);
 }
+
+p {
+    color: var(--color-text);
+    grid-area: content;
+    font-size: 1.1em;
+    line-height: 1.8em;
+    margin-top: 2em;
+}
+
+input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 52px;
+    height: 27px;
+    background: grey;
+    float: right;
+    border-radius: 100px;
+    position: relative;
+}
+
+label::after{
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 90px;
+    transition: 0.3s;
+}
+
+input:checked + label {
+    background-color: var(--color-headings);
+}
+
+input:checked + label::after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+}
+
+label:active:after {
+    width: 45px;
+}
+
 .foto{
     display: flex;
-   
-    width: 50vw;
-}
+    height: 40vh;
+    width: 15vw;
+    margin-left: 290px;
+    border-radius: 1rem 1rem 1rem 1rem;
+} 
+
 .carol{
     width: 15vw;
     height: 40vh;
     border-radius: 1rem 1rem 1rem 1rem;
-    margin-left: 650px;
+    margin-left:50px ;
 }
 
-body{
-    background-color:antiquewhite ;
-    color: black;
-    font: normal 20pt Arial;
-}
 .info{
     font: normal 15pt Arial;
 }
+
 .corpo_a{
     font: normal 15pt Arial;
     text-align: center;
+    color: var(--color-text);
 }
+
 .corpo_b{
     font: normal 15 Arial;
+    color: var(--color-text);
 }
+
 .corpo_c{
     font: normal 15pt Arial;
+    color: var(--color-text);
 }
