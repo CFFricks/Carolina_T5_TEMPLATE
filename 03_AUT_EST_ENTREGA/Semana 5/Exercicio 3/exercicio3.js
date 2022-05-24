@@ -1,10 +1,11 @@
 let input = document.getElementById("lista_desorganizada")
 let result = document.getElementById("vem")
+let sortedList
 
 function ordena_lista() {
     let list = input.value.split(",")
     list = list.map(item => parseInt(item))
-    let sortedList= sort(list)
+    sortedList= sort(list)
     let li = document.createElement("li")
 
     li.innerHTML = `${
@@ -39,4 +40,13 @@ function sort(list) {
         }
     }
     return list
+}
+
+function achar_valor_foco(){
+    let foco=document.getElementById("valor-foco").value
+    for(i=0;i<sortedList.length -1 ;i++){
+        if(foco == sortedList[i]){
+            return alert("indice do valor foco é: " + i)
+        }
+    }
 }
