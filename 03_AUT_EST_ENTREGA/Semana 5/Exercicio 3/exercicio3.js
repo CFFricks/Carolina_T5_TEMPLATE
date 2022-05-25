@@ -44,7 +44,7 @@ function sort(list) {
 
 function achar_valor_foco(){
     let foco=document.getElementById("valor-foco").value
-    for(i=0;i<sortedList.length -1 ;i++){
+    for(i=0; i<sortedList.length -1 ; i++){
         if(foco == sortedList[i]){
             return alert("indice do valor foco é: " + i)
         }

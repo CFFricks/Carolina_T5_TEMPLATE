@@ -6,7 +6,7 @@ const app = express();
 
 // Defining the server hostname and port.
 const hostname = '127.0.0.1';
-const port = 3022;
+const port = 3025;
 
 // Setting up the express static middleware. 
 app.use(express.static("./"));
