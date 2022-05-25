@@ -9,7 +9,7 @@ const hostname = '127.0.0.1';
 const port = 3025;
 
 // Setting up the express static middleware. 
-app.use(express.static("./"));
+app.use(express.static("/"));
 
 // Setting up the server.
 app.listen(port, hostname, () => {
