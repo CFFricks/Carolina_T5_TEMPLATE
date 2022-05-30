@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <title>exercicio 2</title>
+   Texto 1<input id="text1" type="text"> <br />
+   Texto 2<input id="text2" type="text"> <br />
+   <button onclick="inverte()">Inverter</button>
+
+   <script type="text/javascript">
+
+    function inverte(){
+     var text1 = parseFloat(document.getElementById("text1").value);
+     var text2 = parseFloat(document.getElementById("text2").value);
+
+     var aux = text1;
+
+     text1=text2;
+     text2=aux;
+
+     alert("Antes:\n"+
+       "text1="+document.getElementById("text1").value+"\n"+
+       "text2="+document.getElementById("text2").value+"\n\n"+
+       "Invertido:\n"+
+       "text1="+text1+"\n"+
+       "text2="+text2+"\n\n");
+   }
+ </script>
+
+ </head>
+</html>
