@@ -37,16 +37,17 @@ function inverte(){
     document.getElementById("exercicio3").style.display = "block";
     document.getElementById("exercicio4").style.display = "none";
     document.getElementById("exercicio5").style.display = "none";
+
 }
 // FUNCAO DO EXERCICIO 3
 
-let check = document.querySelector(".confere");
+let check = document.querySelector(".check");
 let number = document.querySelector(".numero");
 let text = document.querySelector(".text");
 
 let regex = /^[\d,\s,\+,\-]{11,11}/;
 
-confere.addEventListener("confere",()=>{
+check.addEventListener("click",()=>{
 	if(number.value ==""){
 		text.innerText = "Coloque seu numero";
 		text.style.color = "#fff";
@@ -61,6 +62,7 @@ confere.addEventListener("confere",()=>{
 		text.style.color = "#da3400";
 		}
 });
+console.log()
 
 // EXERCICIO 4
 function exercicio4Btn(){

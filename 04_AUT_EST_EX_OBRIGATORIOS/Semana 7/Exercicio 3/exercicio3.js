@@ -2,7 +2,7 @@ let check = document.querySelector(".check");
 let number = document.querySelector(".numero");
 let text = document.querySelector(".text");
 
-let regex = /^[\d,\s,\+,\-]{5,20}/;
+let regex = /^[\d,\s,\+,\-]{11,11}/;
 
 check.addEventListener("click",()=>{
 	if(number.value ==""){
