@@ -46,11 +46,10 @@ let number = document.querySelector(".numero");
 let text = document.querySelector(".text");
 
 let regex = /^[\d,\s,\+,\-]{11,11}/;
-
 check.addEventListener("click",()=>{
 	if(number.value ==""){
 		text.innerText = "Coloque seu numero";
-		text.style.color = "#fff";
+		text.style.color = "//#endregion";
 	}
 	else if(number.value.match(regex)){
 		text.innerText = "Parabens!! Seu numero é valido";
