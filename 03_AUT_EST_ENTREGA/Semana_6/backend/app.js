@@ -39,7 +39,7 @@ app.get("/contato", (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   let db = new sqlite3.Database(DBPATH);
-  let sql = "SELECT * FROM contato ORDER BY startDate";
+  let sql = "SELECT * FROM contato";
   let params = [];
 
   db.all(sql, params, (err, rows) => {
@@ -54,12 +54,12 @@ app.get("/contato", (req, res) => {
 });
 
 //returns academic info
-app.get("/formaçãoAcademica", (req, res) => {
+app.get("/formacaoAcademica", (req, res) => {
   res.statusCode = 200;
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   let db = new sqlite3.Database(DBPATH);
-  let sql = "SELECT * FROM formaçãoAcademica ORDER BY startDate";
+  let sql = "SELECT * FROM FormacaoAcademica";
   let params = [];
 
   db.all(sql, params, (err, rows) => {

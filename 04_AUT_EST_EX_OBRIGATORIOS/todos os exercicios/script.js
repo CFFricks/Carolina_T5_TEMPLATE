@@ -71,3 +71,25 @@ function exercicio4Btn(){
     document.getElementById("exercicio4").style.display = "block";
     document.getElementById("exercicio5").style.display = "none";
 }
+
+const text1 = document.getElementById('pessoas');
+const text2 = document.getElementById('periodo');
+function buttonEnviar(){
+    var valor1 = parseInt(document.getElementById("pessoas").value);
+    var valor2 = (document.getElementById("periodo")).value;
+    if((valor2 == "Diurno" || valor2 == "diurno") & (valor1 <= 50)){
+        alert("no total: R$ " + 200*valor1 + ",00")
+    }
+    else if((valor2 == "Diurno" || valor2 == "diurno" ) & (valor1 > 50)){
+        var aux = 200 - (200 * 0.4);
+        alert("R$ " + aux + ",00 por pessoa")
+        alert("no total: R$ " + aux*valor1 + ",00")
+    }
+    else if((valor2 == "Noturno" || valor2 == "noturno") & (valor1 <= 50)){
+        alert("no total: R$ " + 100*valor1 + ",00")
+    }
+    else if((valor2 == "Noturno" || valor2 == "noturno" ) & (valor1 > 50)){
+        var aux = 100 - (100 * 0.2);
+        alert("no total: R$ " + aux*valor1 + ",00")
+    }
+}

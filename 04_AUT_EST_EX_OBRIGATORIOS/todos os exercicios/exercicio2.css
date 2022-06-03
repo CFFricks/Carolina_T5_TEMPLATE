@@ -119,3 +119,25 @@ body
 	margin: 0px 25px;
 	color: #ec3051;
 }
+.periodo{
+	height: 50px;
+	width: 400px;
+	outline: none;
+	background: transparent;
+	padding: 0px 20px;
+	border: 2px solid #ec3051;
+	font-size: 18px;
+	margin: 0px 25px;
+	color: #ec3051
+}
+.numero-pessoas{
+	height: 50px;
+	width: 400px;
+	outline: none;
+	background: transparent;
+	padding: 0px 20px;
+	border: 2px solid #ec3051;
+	font-size: 18px;
+	margin: 0px 25px;
+	color: #ec3051
+}
