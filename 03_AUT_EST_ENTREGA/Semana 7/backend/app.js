@@ -15,12 +15,12 @@ app.use(express.static("../frontend/"));
 
 //returns comunication info
 app.use(express.json());
-app.get("/Comunicação", (req, res) => {
+app.get("/Comunicacao", (req, res) => {
   res.statusCode = 200;
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   let db = new sqlite3.Database(DBPATH);
-  let sql = "SELECT * FROM comunicação ORDER BY text";
+  let sql = "SELECT * FROM Comunicacao";
   let params = [];
   db.all(sql, params, (err, rows) => {
     if (err) {
@@ -33,13 +33,79 @@ app.get("/Comunicação", (req, res) => {
   db.close();
 });
 
+app.post("/Comunicacao/criar", (req,res) => {
+    res.statusCode = 200;
+    res.setHeader("Access-Control-Allow-Origin", "*");
+
+    const texto = req.body.texto
+
+    let db = new sqlite3.Database(DBPATH);
+    let sql = `INSERT INTO Comunicacao("text") VALUES("${texto}")`;
+    let params = [];
+    db.all(sql, params, (err, rows) => {
+      if (err) {
+        throw err;
+      }
+
+      // response
+      res.json({ workExperiences: rows });
+    });
+    db.close();
+})
+
+app.put("/Comunicacao/atualizar/:id", (req, res) => {
+
+  res.statusCode = 200;
+  res.setHeader("Access-Control-Allow-Origin", "*");
+
+  const id = req.params.id
+
+  const texto = req.body.texto
+
+  let db = new sqlite3.Database(DBPATH);
+  let sql = `UPDATE Comunicacao SET text = ${texto} WHERE id = ${id}`;
+  let params = [];
+  db.all(sql, params, (err, rows) => {
+    if (err) {
+      throw err;
+    }
+
+    // response
+    res.json({ workExperiences: rows });
+  });
+  db.close();
+})
+
+app.delete("/Comunicacao/deletar/:id", (req, res) => {
+
+  res.statusCode = 200;
+  res.setHeader("Access-Control-Allow-Origin", "*");
+
+  const id = req.params.id
+
+  let db = new sqlite3.Database(DBPATH);
+  let sql = `DELETE FROM Comunicacao WHERE id = ${id}`;
+  let params = [];
+  db.all(sql, params, (err, rows) => {
+    if (err) {
+      throw err;
+    }
+
+    // response
+    res.json({ workExperiences: rows });
+  });
+  db.close();
+})
+
+
+
 //returns contact info
 app.get("/contato", (req, res) => {
   res.statusCode = 200;
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   let db = new sqlite3.Database(DBPATH);
-  let sql = "SELECT * FROM contato ORDER BY startDate";
+  let sql = "SELECT * FROM contato";
   let params = [];
 
   db.all(sql, params, (err, rows) => {
@@ -54,12 +120,12 @@ app.get("/contato", (req, res) => {
 });
 
 //returns academic info
-app.get("/formaçãoAcademica", (req, res) => {
+app.get("/formacaoAcademica", (req, res) => {
   res.statusCode = 200;
   res.setHeader("Access-Control-Allow-Origin", "*");
 
   let db = new sqlite3.Database(DBPATH);
-  let sql = "SELECT * FROM formaçãoAcademica ORDER BY startDate";
+  let sql = "SELECT * FROM FormacaoAcademica";
   let params = [];
 
   db.all(sql, params, (err, rows) => {

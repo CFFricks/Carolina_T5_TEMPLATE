@@ -1,0 +1,143 @@
+*
+{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+body
+{
+	display: grid;
+	place-items: center;
+	height: 100vh;
+	background: #0f1423;
+}
+.container
+{
+	height: 350px;
+	width: 450px;
+	background: #191c2d;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.7), -2px -2px 3px rgba(255,255,255,0.2);
+}
+.container h3
+{
+	text-align: center;
+	margin: 15px 0px;
+	font-size: 20px;
+	color: #ec3051;
+}
+.textos
+{
+	height: 50px;
+	width: 400px;
+	outline: none;
+	background: transparent;
+	padding: 0px 20px;
+	border: 2px solid #ec3051;
+	font-size: 18px;
+	margin: 0px 25px;
+	color: #ec3051;
+}
+.texto-1::placeholder
+{
+	color: #fff6f8;
+}
+.container h5
+{
+	height: 20px;
+	width: 400px;
+	margin: 0px 25px;
+	color: #fff;
+}
+.container .check
+{
+	height: 50px;
+	width: 400px;
+	border: none;
+	outline: none;
+	background: #ec3051;
+	padding: 0px 20px;
+	font-size: 20px;
+	margin: 14px 25px;
+	cursor: pointer;
+	font-weight: 600;
+	color: #191e2d;
+}
+/* EXERCICIO 3 */
+.navbar .navbar-expand-lg .navbar-light .bg-whitecolor .border-bottom .border-top .border-2 .border-dark{
+	color:antiquewhite
+}
+
+.container .confere
+{
+	height: 50px;
+	width: 400px;
+	border: none;
+	outline: none;
+	background: #ec3051;
+	padding: 0px 20px;
+	font-size: 20px;
+	margin: 14px 25px;
+	cursor: pointer;
+	font-weight: 600;
+	color: #191e2d;
+}
+.container h6
+{
+	height: 20px;
+	width: 400px;
+	margin: 0px 25px;
+	color: #fff;
+}
+.numero
+{
+	height: 50px;
+	width: 400px;
+	outline: none;
+	background: transparent;
+	padding: 0px 20px;
+	border: 2px solid #ec3051;
+	font-size: 18px;
+	margin: 0px 25px;
+	color: #ec3051;
+}
+.container3{
+	height: 250px;
+	width: 450px;
+	background: #191c2d;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.7), -2px -2px 3px rgba(255,255,255,0.2);
+}
+/* CSS DO EXERCICIO 4 */
+.selector{
+	height: 50px;
+	width: 400px;
+	outline: none;
+	background: transparent;
+	padding: 0px 20px;
+	border: 2px solid #ec3051;
+	font-size: 18px;
+	margin: 0px 25px;
+	color: #ec3051;
+}
+.periodo{
+	height: 50px;
+	width: 400px;
+	outline: none;
+	background: transparent;
+	padding: 0px 20px;
+	border: 2px solid #ec3051;
+	font-size: 18px;
+	margin: 0px 25px;
+	color: #ec3051
+}
+.numero-pessoas{
+	height: 50px;
+	width: 400px;
+	outline: none;
+	background: transparent;
+	padding: 0px 20px;
+	border: 2px solid #ec3051;
+	font-size: 18px;
+	margin: 0px 25px;
+	color: #ec3051
+}

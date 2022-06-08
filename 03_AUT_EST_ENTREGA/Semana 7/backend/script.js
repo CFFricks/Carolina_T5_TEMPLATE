@@ -20,3 +20,4 @@ $.ajax(settings).done(function (response) {
             </div>
         </div>`
     })
+})
