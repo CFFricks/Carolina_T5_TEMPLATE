@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="exercicio1.css">
     <title>Exercicio 1</title>
 </head>
 <body>
-    quantidade do produto
-    <input id="quantidade" type="number" />
-
+    <div class="container">
+        <h1>QUANTIDADE:</h1>
+        <input type="number" placeholder="0" id="quantidade">
+        <input type="button" value="+" id="somar" onclick="Adicionar()">
+        <input type="button" value="-" id="subtrair" onclick="Subtrair()">
+    </div>
 </body>
+<script src="script.js"></script>
 </html>
