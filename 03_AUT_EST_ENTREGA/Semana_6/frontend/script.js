@@ -21,3 +21,15 @@ $.ajax(settings).done(function (response) {
         </div>`
     })
 })
+function mandaIndic(){
+var url="http://127.0.0.1:3026/indicacoesinsert"
+console.log('estou na funcao')
+$.ajax({
+    url: url,
+    type: 'POST',
+    data: {
+        Nome: $('#nome').val(),
+        Indicacao: $('#indicacao').val(),
+    },
+});
+}

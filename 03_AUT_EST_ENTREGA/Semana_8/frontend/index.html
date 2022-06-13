@@ -52,10 +52,17 @@
         </article>
 
         <h1 id="indicacoes">
-            <input type="text" placeholder="Nome" id="#nome">
-            <input type="text" placeholder="Por que você indica Carolina Fricks" id="indicacao">
+            <input type="text" placeholder="Nome" id="nome" name="">
+            <input type="text" placeholder="Por que você indica Carolina Fricks" id="indicacao" name="">
             <input type="button" id="mandaIndic" onclick="mandaIndic()">
+
         </h1>
+    
+        <div id="getDB" class="sections">
+            <h3>Resultado GET FROM DB</h3>
+            Resultados obtidos com a requisição GET no nosso banco:
+        </div>
+        <button onclick="TestGETDB()" class="button-get-db">GET FROM DB</button>
         
     </header>
     <script src="script.js" type="text/javascript"></script>

@@ -140,6 +140,52 @@ app.get("/formacaoAcademica", (req, res) => {
 });
 
 
+// Insere um registro (é o C do CRUD - Create)
+app.post('/indicacoesinsert', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	sql = "INSERT INTO indicacoes (Nome, Indicacao) VALUES ('" + req.body.Nome + "','" + req.body.Indicacao + "')";
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	db.run(sql, [],  err => {
+		if (err) {
+		    throw err;
+		}
+	});
+	db.close(); // Fecha o banco
+	res.end();
+});
+// Atualiza um registro (é o U do CRUD - Update)
+app.post('/indicacoesuptade', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	sql = "UPDATE indicacoes SET Nome = '" + req.body.Nome + "', Indicacao = '" + req.body.Indicacao + "' WHERE idIndicacao = " + req.body.idIndicacao;
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	db.run(sql, [],  err => {
+		if (err) {
+		    throw err;
+		}
+		res.end();
+	});
+	db.close(); // Fecha o banco
+});
+// Exclui um registro do (é o D do CRUD - Delete)
+app.post('/indicacoesdelete', urlencodedParser, (req, res) => {
+	res.statusCode = 200;
+	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
+
+	sql = "DELETE FROM indicacoes WHERE idIndicacao = '" + req.body.idIndicacao + "'";
+	console.log(sql);
+	var db = new sqlite3.Database(DBPATH); // Abre o banco
+	db.run(sql, [],  err => {
+		if (err) {
+		    throw err;
+		}
+		res.end();
+	});
+	db.close(); // Fecha o banco
+});
 
 // Setting up the express static middleware. 
 app.use(express.static("../frontend/"));

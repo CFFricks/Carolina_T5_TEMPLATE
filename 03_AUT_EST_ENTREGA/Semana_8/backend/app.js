@@ -1,18 +1,15 @@
-// Importing all required libraries.
+
 const express = require('express');
-
-// Instancing app with express.
 const app = express();
-
-// Defining the server hostname and port.
 const hostname = '127.0.0.1';
-const port = 3026;
-
+const port = 3029;
 const sqlite3 = require("sqlite3").verbose();
 const DBPATH = "database.db";
-// Setting up the express static middleware. 
+const bodyParser = require('body-parser');
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.use(express.static("../frontend/"));
 
+var getDBResDiv = "#getDB";
 //returns comunication info
 app.use(express.json());
 app.get("/Comunicacao", (req, res) => {
@@ -159,7 +156,7 @@ app.get('/indicacoes', (req, res) => {
 	db.close(); // Fecha o banco
 });
 // Insere um registro (é o C do CRUD - Create)
-app.post('/indicacoesinsert', (req, res) => {
+app.post('/indicacoesinsert', urlencodedParser, (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
@@ -169,7 +166,6 @@ app.post('/indicacoesinsert', (req, res) => {
 		if (err) {
 		    throw err;
 		}
-    
 	});
 	db.close(); // Fecha o banco
 	res.end();
@@ -179,7 +175,7 @@ app.post('/indicacaoUpdate', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-	sql = "UPDATE indicacao SET Nome = '" + req.body.Nome + "', idIndicacao = '" + req.body.idIndicacao + "' WHERE idIndicacao = '" + req.body.idIndicacao + "'";
+	sql = "UPDATE indicacoes SET Nome = '" + req.body.Nome + "', idIndicacao = '" + req.body.idIndicacao + "' WHERE idIndicacao = '" + req.body.idIndicacao + "'";
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
 		if (err) {
@@ -194,7 +190,7 @@ app.post('/indicacaodelete', (req, res) => {
 	res.statusCode = 200;
 	res.setHeader('Access-Control-Allow-Origin', '*'); // Isso é importante para evitar o erro de CORS
 
-	sql = "DELETE FROM indicacao WHERE idIndicacao = '" + req.body.idIndicacao + "'";
+	sql = "DELETE FROM indicacoes WHERE idIndicacao = '" + req.body.idIndicacao + "'";
 	console.log(sql);
 	var db = new sqlite3.Database(DBPATH); // Abre o banco
 	db.run(sql, [],  err => {
@@ -209,6 +205,19 @@ app.post('/indicacaodelete', (req, res) => {
 
 // Setting up the express static middleware. 
 app.use(express.static("../frontend/"));
+//ETAPA 7
+var getDBResDiv = "#getDB";
+    function TestGETDB(){
+        var url = "http://127.0.0.1:3029/indicacoesinsert";
+        var resposta;
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", url, false);
+        xhttp.send();//A execução do script pára aqui até a requisição retornar do servidor
+        resposta = JSON.parse(xhttp.responseText);
+        $(getDBResDiv).append("<br /><br />" + JSON.stringify(resposta));
+        $(getDBResDiv).append("<br /><br />* Seleção do atributo 'title' do primeiro usuario:<br />" + resposta[0].title);
+        console.log(xhttp.responseText);
+    }
 
 // Setting up the server.
 app.listen(port, hostname, () => {
